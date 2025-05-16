@@ -1,17 +1,15 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "<h1>Hello, flask!</h1><p> firsit page</p>"
+    return render_template("index.html")
 
-
-@app.route("user")
+@app.route("/user")
 def user():
-    return "<h1>user!</h1><p> second page</p>"
+    return "<h1>user!</h1><p>這是我的第2頁</p>"
 
-@app.route("product")
+@app.route("/product")
 def product():
-    return "<h1>product!</h1><p> third page</p>"
-
+    return "<h1>product!</h1><p>這是我的第3頁</p>"
