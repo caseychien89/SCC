@@ -91,44 +91,58 @@ main h1 {
 }
 
 /* 頁尾 Footer */
-
 footer {
-    background-color: #f0f0f0;
-    /* A light grey background, adjust as needed */
-    padding: 20px;
+    background-color: #8fa59b;
+    /* 根據圖片調整的淺藍色，您可以修改 */
+    color: #333;
+    /* 文字顏色，根據圖片內容調整 */
+    padding: 30px 50px 10px 50px;
+    font-size: 14px;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    /* 讓左右兩部分分開 */
     align-items: flex-start;
+    /* 頂部對齊 */
     max-width: 1200px;
-    /* Adjust as needed for your layout */
+    /* 限制最大寬度，使其居中 */
     margin: 0 auto;
-    /* Center the footer content */
-}
-
-.footer-left {
-    display: flex;
-    align-items: center;
+    /* 水平居中 */
+    gap: 20px;
+    /* 各區域之間的間距 */
+    flex-wrap: wrap;
+    /* 在小螢幕上換行 */
 }
 
 .footer-left img {
-    width: 30px;
-    /* Adjust the size of your logo */
-    height: auto;
-    margin-right: 10px;
+    max-height: 50px;
+    /* 限制 Logo 高度 */
+    display: block;
+    /* 避免圖片下方多餘空間 */
 }
 
-.footer-middle {
+.footer-links {
     display: flex;
-    gap: 40px;
-    /* Spacing between the columns */
+    gap: 30px;
+    /* 每個連結區塊之間的間距 */
+    flex-wrap: wrap;
+    /* 在小螢幕上換行 */
 }
 
-.footer-column h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+.footer-column {
+    min-width: 150px;
+    /* 每個連結區塊的最小寬度 */
+}
+
+.footer-column h4 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #000;
+    /* 標題顏色，根據圖片調整 */
+    font-weight: bold;
 }
 
 .footer-column ul {
@@ -137,31 +151,48 @@ footer {
     margin: 0;
 }
 
-.footer-column li {
-    margin-bottom: 5px;
+.footer-column ul li {
+    margin-bottom: 8px;
 }
 
-.footer-column a {
+.footer-column ul li a {
     text-decoration: none;
     color: #333;
-    /* Adjust link color */
+    /* 連結文字顏色 */
+    transition: color 0.3s ease;
 }
 
-.footer-right h3 {
-    margin-top: 0;
+.footer-column ul li a:hover {
+    color: #007BFF;
+    /* 連結滑鼠懸停顏色 */
+}
+
+.footer-column p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.app-buttons img {
+    max-height: 40px;
+    margin-right: 10px;
     margin-bottom: 10px;
-    text-align: right;
-    /* Align "Gat App" to the right */
 }
 
-.footer-right img {
-    width: 80px;
-    /* Adjust the size of your app image */
-    height: auto;
-    display: block;
-    /* Prevent inline spacing issues */
+.footer-bottom {
+    text-align: right;
+    /* 根據圖片，版權信息在右邊 */
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #A9A9A9;
+    /* 分隔線顏色 */
+    font-size: 12px;
+    max-width: 1200px;
     margin-left: auto;
-    /* Align the image to the right */
+    /* 與 footer-container 一樣右對齊 */
+    margin-right: auto;
+    /* 與 footer-container 一樣居中 */
+}
+
 
 /* --- Media Queries (RWD) --- */
 
