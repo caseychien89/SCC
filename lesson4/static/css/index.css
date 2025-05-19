@@ -17,10 +17,10 @@ body {
 
 /* 頁首 Header */
 .site-header {
-    background-color: #52617a;
+    background-color: #4676ca;
     /* 根據圖片的淺灰色背景 */
     padding: 15px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(214, 32, 32, 0.1);
 }
 
 .site-header .container {
@@ -72,7 +72,7 @@ body {
 .menu-toggle {
     display: none;
     /* 預設隱藏，手機版顯示 */
-    background-color: #333;
+    background-color: #125797;
     color: #fff;
     border: none;
     padding: 10px 15px;
