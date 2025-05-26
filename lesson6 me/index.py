@@ -6,9 +6,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html.jinja2")
 
+
 @app.route("/classes")
 def classes():
     return render_template("classes.html.jinja2")
+
 
 @app.route("/new")
 def new():
@@ -21,4 +23,3 @@ def traffic():
 @app.route("/contact")
 def contact():
     return render_template("contact.html.jinja2")
-

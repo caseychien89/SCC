@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-    {% block title %}
+    {%block title%}
     職能發展學院
-    {% endblock %}
+    {%endblock%}
     </title>
-    {% block link%}
     <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
-    {% endblock %}
 </head>
 <body>
     <header class="site-header">
@@ -20,7 +18,7 @@
             </div>
             <nav class="main-navigation">
                 <ul>
-                    
+        
                     <li><a href="{{url_for('classes')}}">課程規劃</a></li>
                     <li><a href="{{url_for('new')}}">最新消息</a></li>
                     <li><a href="{{url_for('traffic')}}">交通資訊</a></li>
@@ -35,15 +33,14 @@
 
     <main>
         <div class="container">
-        {% block main %}
+          {% block main %}
             <h1>歡迎來到職能發展學院</h1>
             <p>這是一個符合 RWD 的基礎網頁框架，您可以基於此框架繼續開發您的網站內容。</p>
             <p>此框架的導覽列是根據您提供的圖片設計的。</p>
-        {% endblock %}
+            {% endblock %}
         </div>
     </main>
-
-   <footer>
+     <footer>
         <div class="footer-container">
             <div class="footer-left">
                 <img src="{{url_for('static', filename='images/just_home_logo.png')}}" alt="JustHome Logo">
@@ -75,7 +72,7 @@
             <p>&copy; 2025 職能發展學院. 版權所有.</p>
         </div>
     </footer> 
-
+       
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
 </body>
 </html>
