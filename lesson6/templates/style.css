@@ -1,0 +1,71 @@
+footer {
+    background-color: #f0f0f0;
+    /* A light grey background, adjust as needed */
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    /* Adjust as needed for your layout */
+    margin: 0 auto;
+    /* Center the footer content */
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left img {
+    width: 30px;
+    /* Adjust the size of your logo */
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer-middle {
+    display: flex;
+    gap: 40px;
+    /* Spacing between the columns */
+}
+
+.footer-column h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #333;
+    /* Adjust link color */
+}
+
+.footer-right h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: right;
+    /* Align "Gat App" to the right */
+}
+
+.footer-right img {
+    width: 80px;
+    /* Adjust the size of your app image */
+    height: auto;
+    display: block;
+    /* Prevent inline spacing issues */
+    margin-left: auto;
+    /* Align the image to the right */
+}
