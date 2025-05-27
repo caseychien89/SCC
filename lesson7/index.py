@@ -1,4 +1,12 @@
 from flask import Flask,render_template
+import os
+from dotenv import load_dotenv
+import psycopg2
+from psycopg2 import OperationalError
+
+#載入 .env檔案
+load_dotenv()
+conn_string= os.getenv("RENDER_DATABASE")
 
 app = Flask(__name__)
 
@@ -15,6 +23,13 @@ def classes():
 
 @app.route("/new")
 def new():
+    try:
+         conn=psycopg2.connect(conn_string)
+         print('連線成功')
+    except OperationalError as e:
+         print('連線失敗')
+         print(e)
+    conn.close()
     return render_template("new.html.jinja2")
 
 @app.route("/traffic")
