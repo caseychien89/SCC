@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程標籤元件</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="course-tabs" aria-label="課程類型">
+        <div class="tab-container" role="tablist">
+            <button class="tab-item active" data-tab="general" role="tab" aria-selected="true"
+                id="tab-general">一般課程</button>
+            <button class="tab-item" data-tab="advanced" role="tab" aria-selected="false"
+                id="tab-advanced">進階課程</button>
+            <!-- 更多標籤可動態添加或在此處預定義 -->
+            <!-- <button class="tab-item" data-tab="beginner" role="tab" aria-selected="false" id="tab-beginner">初階課程</button> -->
+        </div>
+        <div class="tab-line"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

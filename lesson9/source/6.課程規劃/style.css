@@ -1,0 +1,131 @@
+:root {
+    /* Colors */
+    --color-bg-selected: #C3C1C1;
+    --color-bg-unselected: #E8E6E6;
+    --color-text: #000000;
+    --color-line: #000000;
+    --color-bg-selected-hover: #B5B3B3;
+    --color-bg-unselected-hover: #D0CECE;
+
+    /* Typography */
+    --font-family-main: 'Inter', Arial, sans-serif;
+    --font-weight-medium: 500;
+    --line-height-tab: 1.21;
+
+    /* Desktop Sizes */
+    --font-size-desktop: 24px;
+    --padding-v-desktop: 12px;
+    --padding-h-desktop: 29px;
+    --container-width-desktop: 1174px;
+
+    /* Mobile Sizes */
+    --font-size-mobile: 18px;
+    --padding-v-mobile: 8px;
+    --padding-h-mobile: 20px;
+
+    /* Border Radius */
+    --border-radius-tab: 15px 15px 0 0;
+
+    /* Breakpoints */
+    --breakpoint-mobile-max: 767px;
+    /* < 768px */
+    /* --breakpoint-desktop-min: 1024px; /* >= 1024px - Desktop styles are default */
+}
+
+body {
+    /* Basic styling for demo page */
+    font-family: var(--font-family-main);
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Example background */
+    display: flex;
+    justify-content: center;
+    /* Center the component for demo */
+    align-items: flex-start;
+    /* Align to top for demo */
+    min-height: 100vh;
+}
+
+.course-tabs {
+    max-width: var(--container-width-desktop);
+    width: 100%;
+    /* Adapts to container, capped by max-width */
+    margin: 0 auto;
+    /* Centers if parent is wider and allows */
+}
+
+.tab-container {
+    display: flex;
+    overflow-x: auto;
+    /* Allows horizontal scrolling on mobile if tabs overflow */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
+}
+
+.tab-container::-webkit-scrollbar {
+    /* Hide scrollbar for Chrome, Safari, Edge */
+    display: none;
+}
+
+.tab-item {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-desktop);
+    line-height: var(--line-height-tab);
+    padding: var(--padding-v-desktop) var(--padding-h-desktop);
+    border-radius: var(--border-radius-tab);
+    border: none;
+    /* Buttons have default borders, remove them */
+    cursor: pointer;
+    background-color: var(--color-bg-unselected);
+    color: var(--color-text);
+    white-space: nowrap;
+    /* Prevent text wrapping within a tab */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    flex-shrink: 0;
+    /* Prevent tabs from shrinking if container is too small before scrolling kicks in */
+}
+
+.tab-item.active {
+    background-color: var(--color-bg-selected);
+}
+
+.tab-item:not(.active):hover {
+    background-color: var(--color-bg-unselected-hover);
+}
+
+.tab-item.active:hover {
+    background-color: var(--color-bg-selected-hover);
+}
+
+.tab-item:active {
+    /* Visual feedback on click */
+    transform: scale(0.98);
+}
+
+.tab-line {
+    height: 1px;
+    background-color: var(--color-line);
+    width: 100%;
+    /* margin-top: -1px; Ensures line is directly under tabs with 0 bottom radius */
+    /* If tabs have a border, this might need adjustment.
+       Given the 0px bottom radius, this should align well. */
+}
+
+/* RWD - Mobile First Approach (Desktop styles are default, mobile overrides) */
+/* Mobile (<768px) */
+@media (max-width: var(--breakpoint-mobile-max)) {
+    .course-tabs {
+        /* Container width is already 100% by default, max-width still applies */
+    }
+
+    .tab-item {
+        font-size: var(--font-size-mobile);
+        padding: var(--padding-v-mobile) var(--padding-h-mobile);
+    }
+
+    /* Horizontal scrolling is enabled by default on .tab-container via overflow-x: auto */
+}
