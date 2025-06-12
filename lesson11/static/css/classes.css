@@ -13,7 +13,6 @@ body {
 
 .tab-container {
     display: flex;
-    height: 40px;
 }
 
 .tab-item {
