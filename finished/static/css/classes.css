@@ -76,7 +76,7 @@ body {
 }
 
 
-/*新增的*/
+/*card*/
 .card {
     width: 100%;
     height: 250px;
@@ -145,6 +145,49 @@ body {
     margin-bottom: 0;
 }
 
+/*分頁*/
+.pagination {
+  list-style: none;       /* 移除預設的點點 */
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;          /* 水平排列 */
+  justify-content: center; /* 水平置中 */
+  gap: 8px;               /* 分頁按鈕間距 */
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  color: #007bff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.pagination li a:hover {
+  background-color: #e9ecef;
+}
+
+.pagination li.active span {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  cursor: default;
+}
+
+.pagination li.disabled span {
+  color: #6c757d;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+
 /* RWD 響應式設計 */
 
 /* 手機版 (<768px) */
@@ -183,37 +226,4 @@ body {
     .author-description {
         font-size: 14px;
     }
-}
-
-.pagination-container {
-    display: flex;
-    justify-content: center; /* 置中分頁 */
-    margin-top: 20px; /* 與上方內容的間距 */
-}
-
-.pagination-button {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 0 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #007bff;
-    background-color: #fff;
-    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-}
-
-.pagination-button:hover:not(.disabled):not(.active) {
-    background-color: #f0f0f0;
-}
-
-.pagination-button.active {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
-}
-
-.pagination-button.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
 }
