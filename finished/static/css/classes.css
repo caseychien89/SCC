@@ -226,4 +226,13 @@ body {
     .author-description {
         font-size: 14px;
     }
+
+    .pagination {
+        flex-wrap: wrap; /* 允許分頁按鈕換行 */
+        justify-content: center; /* 換行後仍然置中 */
+    }
+
+    .pagination li {
+        margin-bottom: 8px; /* 換行後增加底部間距 */
+    }
 }
