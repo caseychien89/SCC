@@ -1,0 +1,61 @@
+.card-container {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; Full viewport height for centering */
+    /* background-color: #f0f0f0; Just for testing visibility */
+}
+
+.card {
+    width: 250px;
+    /* height: 180px; */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    box-sizing: border-box;
+    padding: 15px; /* Add some padding */
+    font-family: Inter, sans-serif;
+    position: relative; /* Needed for absolute positioning of divider */
+    background-color: #fff; /* White background for the card */
+}
+
+.card-group {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1E1E1E;
+    margin-bottom: 10px; /* Space below group */
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -2%;
+    color: #000000;
+    margin-bottom: 15px; /* Space below title */
+    word-break: break-word; /* Prevent text overflow */
+}
+
+.card-details {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-divider {
+    width: 3px;
+    height: 110px;
+    background-color: #D9D9D9;
+    margin-right: 10px;
+}
+
+.card-info p {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000000;
+    margin: 0 0 8px 0; /* Space between info paragraphs */
+    word-break: break-word; /* Prevent text overflow */
+}
+
+.card-info p:last-child {
+    margin-bottom: 0; /* No margin for the last paragraph */
+}

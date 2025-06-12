@@ -1,0 +1,46 @@
+{% extends "layout/base.html.jinja2" %}
+{% block title %}
+職能發展學院-課程規劃
+{% endblock %}
+
+{% block link %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/classes.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+{% endblock%}
+
+{% block main %}
+
+<div class="course-tabs">
+        <div class="tab-container">
+        {% for kind in kinds%}     
+          <a href="/classes/{{'一般課程' if loop.first else '進階課程'}}" ><button class="tab-item {{'active' if loop.first}}">{{kind}}</button></a>
+        {% endfor %}
+        </div>
+        <div class="tab-line"></div>
+</div>
+<section class="testimonial-grid">
+  <div class="card-grid">
+  {%for course in course_data%}  
+    
+    <div class="card">
+        <div class="card-content">
+            <p class="card-category">{{course[1]}}</p>
+            <h3 class="card-title">{{course[0]}}</h3>
+            <div class="card-info">
+                <div class="card-divider"></div>
+                <div class="card-details">
+                    <p class="card-info-item">進修人數:{{course[2]}}</p>
+                    <p class="card-info-item">進修時數:{{course[3]}}</p>
+                    <p class="card-info-item">進修費用:{{course[4]}}</p>
+                    <p class="card-info-item">上課時間:{{course[5]}}</p>
+                    <p class="card-info-item">開始日期:{{course[6]}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+  </div>
+</section>
+<script src="{{ url_for('static',filename='js/classes.js')}}"></script>
+{% endblock %}
