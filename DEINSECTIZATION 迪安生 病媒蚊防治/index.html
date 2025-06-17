@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迪安生 DEINSECTIZATION</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <aside class="social-sidebar">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href=" @kgj1228h"><i class="fas fa-comment-dots"></i></a>
+        <a href="0927824039"><i class="fas fa-phone"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#top" class="to-top"><i class="fas fa-arrow-up"></i></a>
+    </aside>
+
+    <header id="top">
+        <div class="container">
+            <div class="logo">
+                <img src="./Dinsectiz LOGO.png">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">關於我們</a></li>
+                    <li><a href="#cases">實績案例</a></li>
+                    <li><a href="#contact">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <a href="#" class="active">繁中</a> 
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1> </h1>
+            <p>消毒、除蟲、防治－就找最專業的我們！</p>
+            <video src="白防治5秒.mp4"  controls autoplay loop poster="廣告主視覺.png" width="650px" height="400px"></video>
+        </div>
+    </section>
+
+    <section id="about" class="about-us">
+        <div class="container">
+            <h2>ABOUT US</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>我們擁有20年的消毒的經驗，<br>從居家空間(大樓、透天、套房)至戶外商業空間 (餐廳、賣場、工廠)
+                    <br>每一項選擇都是為了陪您打造理想生活，<br>感受「乾淨環境」為您身心帶來的安心。</p>
+                    <a href="#" class="more-link">MORE <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="about-images">
+                    <img src="./合格病媒蚊防治.jpg" alt="合格病媒蚊防治證書">
+                    <img src="./合格証書.jpg" alt="合格證書">
+                    <img src="./定期消毒証明.jpg" alt="定期消毒證明">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>實績案例 CASES</h2>
+                <a href="#" class="more-link">MORE <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="./實例1.jpg">
+                    <h3>健康饗食館</h3>
+                    <a href="#" class="view-product-link"><i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <img src="實例2.jpg">
+                    <h3>學生宿舍</h3>
+                    <a href="#" class="view-product-link"><i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <img src="./實例3.jpg">
+                    <h3>大樓</h3>
+                    <a href="#" class="view-product-link"><i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <img src="./實例4.jpg">
+                    <h3>裝潢</h3>
+                    <a href="#" class="view-product-link"><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-us">
+        <div class="container">
+            <h2>聯絡我們 CONTACT US</h2>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="companyName">公司名稱</label>
+                            <input type="text" id="companyName" name="companyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">電子信箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group recaptcha-placeholder">
+                            <p>[reCAPTCHA will be here]</p>
+                        </div>
+                        <button type="submit" class="submit-button">SUBMIT <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for image zoom -->
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="./Dinsectiz LOGO.png">
+                </div>
+                <div class="footer-info">
+                    <h4>迪安生環保企業社 </h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 地址:24762新北市蘆洲區長案街212號3樓</p>
+                    <p><i class="fas fa-phone"></i> 電話: 0927-824039</p>
+                    <p><i class="fas fa-envelope"></i> 電子信箱: georgelucky6@gmail.com</p>
+                    <p><i class="fab fa-line"></i> LINE: @kgj1228h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 迪安生. All Rights Reserved. Design by Deinsctization</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
