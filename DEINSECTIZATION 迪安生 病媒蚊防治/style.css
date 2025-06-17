@@ -258,7 +258,7 @@ header .container {
         transition: transform 0.3s;
     }
 
-.auout-image:hover img {
+.about-images img:hover {
     transform: scale(1.3);
 }
 /* Products Section */
