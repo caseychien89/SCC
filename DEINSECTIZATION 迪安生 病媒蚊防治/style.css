@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
-    --primary-color: #8A624A;
-    /* Brownish */
+    --primary-color: #CCCCCC;
+    /* Light gray */
     --secondary-color: #D8C3A5;
     /* Light beige */
     --accent-color: #E8A87C;
@@ -43,7 +43,7 @@ h2,
 h3,
 h4 {
     font-family: var(--serif-font);
-    color: var(--primary-color);
+    color: var(--logo-green);
     margin-bottom: 0.75em;
 }
 
@@ -140,7 +140,7 @@ header .container {
 }
 
 .logo img {
-    max-height: 100px; /* Increased size */
+    max-height: 130px; /* Increased size */
     /* Adjust as needed */
 }
 
@@ -176,17 +176,17 @@ header .container {
 }
 
 .lang-switcher a.active {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-weight: bold;
 }
 
 .mobile-nav-toggle {
-    display: none;
-    /* Hidden on desktop */
+    display: block;
+    /* Show hamburger icon */
     background: none;
     border: none;
-    font-size: 1.5em;
-    color: var(--primary-color);
+    font-size: 2em; /* Increased size */
+    color: var(--logo-green); /* Changed color */
     cursor: pointer;
 }
 
@@ -220,14 +220,14 @@ header .container {
     font-size: 3.5em;
     /* Larger for hero */
     margin-bottom: 0.3em;
-    color: #fff;
+    color: var(--text-color);
     font-weight: normal;
     /* As seen in image */
 }
 
 .hero p {
     font-size: 1.5em;
-    color: #eee;
+    color: var(--text-color);
 }
 
 /* About Us Section */
@@ -340,10 +340,6 @@ header .container {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-}
-
-.case-item img {
-    transition: transform 0.4s ease;
 }
 
 .case-item:hover img {
@@ -470,8 +466,8 @@ header .container {
 
 /* Footer */
 footer {
-    background-color: var(--text-color); /* Use dark gray for footer background */
-    color: #e0e0e0;
+    background-color: var(--primary-color); /* Use dark gray for footer background */
+    color: #00008B;
     /* Lighter text for contrast */
     padding: 40px 0 20px;
 }
@@ -490,7 +486,7 @@ footer .container {
 }
 
 .footer-logo img {
-    max-height: 80px; /* Increased size */
+    max-height: 144px; /* Increased size */
     /* Adjust as needed */
     margin-bottom: 15px;
 }
@@ -501,7 +497,7 @@ footer .container {
 }
 
 .footer-info h4 {
-    color: #fff;
+    color: #00008B;
     margin-bottom: 15px;
     font-size: 1.1em;
 }
@@ -509,7 +505,7 @@ footer .container {
 .footer-info p {
     font-size: 0.9em;
     margin-bottom: 8px;
-    color: #e0e0e0; /* Ensure text is light on dark background */
+    color: #00008B; /* Ensure text is light on dark background */
     /* Slightly lighter for better readability on dark bg */
 }
 
@@ -521,22 +517,22 @@ footer .container {
 }
 
 .footer-social a {
-    color: #e0e0e0;
+    color: #FFA500;
     font-size: 1.4em;
     margin-right: 15px;
     transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: var(--accent-color);
+    color: var(--logo-red);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(233, 221, 221, 0.2);
     font-size: 0.85em;
-    color: #bbb;
+    color: var(--logo-green);
 }
 
 /* Responsive Design */
@@ -705,41 +701,3 @@ footer .container {
         order: 3;
     }
 }
-
-</final_file_content>
-
-IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.
-
-<environment_details>
-# VSCode Visible Files
-../../../AppData/Local/Programs/Microsoft VS Code/"DEINSECTIZATION /350/277/252/345/256/211/347/224/237 /347/227/205/345/252/222/350/232/212/351/230/262/346/262/273/style.css"
-../../../AppData/Local/Programs/Microsoft VS Code/"DEINSECTIZATION /350/277/252/345/256/211/347/224/237 /347/227/205/345/252/222/350/232/212/351/230/262/346/262/273/style.css"
-../../../AppData/Local/Programs/Microsoft VS Code/"DEINSECTIZATION /350/277/252/345/256/211/347/224/237 /347/227/205/345/252/222/350/232/212/351/230/262/346/262/273/style.css"
-../../../AppData/Local/Programs/Microsoft VS Code/"DEINSECTIZATION /350/277/252/345/256/211/347/224/237 /347/227/205/345/252/222/350/232/212/351/230/262/346/262/273/style.css"
-DEINSECTIZATION 迪安生 病媒蚊防治/style.css
-
-# VSCode Open Tabs
-lesson11/static/css/classes.css
-requirements.txt
-finished/requirements.txt
-lesson11 上午/templates/classes.html.jinja2
-lesson11 上午/static/css/classes.css
-lesson11 上午/index.py
-finished/static/css/classes.css
-DEINSECTIZATION 迪安生 病媒蚊防治/script.js
-DEINSECTIZATION 迪安生 病媒蚊防治/index.html
-DEINSECTIZATION 迪安生 病媒蚊防治/style.css
-
-# Recently Modified Files
-These files have been modified since you last accessed them (file was just edited so you may need to re-read it before editing):
-DEINSECTIZATION 迪安生 病媒蚊防治/style.css
-
-# Current Time
-2025/6/17 上午11:18:17 (Asia/Taipei, UTC+8:00)
-
-# Context Window Usage
-246,582 / 1,048.576K tokens used (24%)
-
-# Current Mode
-ACT MODE
-</environment_details>
