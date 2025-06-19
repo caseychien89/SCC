@@ -1,0 +1,6 @@
+Flask
+pandas
+numpy
+statsmodels
+pickle-mixin  # 雖然pickle是內建的，但有些平台需要明確的依賴
+gunicorn
