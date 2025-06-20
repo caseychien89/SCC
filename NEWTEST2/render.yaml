@@ -1,0 +1,9 @@
+# render.yaml
+services:
+  - type: web
+    name: pir-prediction-api
+    env: python
+    plan: free # 使用免費方案
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    healthCheckPath: /predict # Render 會檢查這個路徑是否正常運作
