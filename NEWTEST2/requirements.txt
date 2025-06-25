@@ -6,8 +6,4 @@ statsmodels
 scikit-learn
 joblib
 matplotlib
-<<<<<<< HEAD
 gunicorn  # Gunicorn 是一個正式環境用的伺服器，比 Flask 內建的更穩定
-=======
-gunicorn  # Gunicorn 是一個正式環境用的伺服器，比 Flask 內建的更穩定
->>>>>>> bdc7aa07638e9658832e6ce08ad847252ec06f33
