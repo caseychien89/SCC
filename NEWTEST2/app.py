@@ -1,10 +1,12 @@
+# app.py
+
 import pandas as pd
 import numpy as np
 import matplotlib
-matplotlib.use('Agg') # <--- 非常重要！讓 Matplotlib 在沒有 GUI 的伺服器環境下也能運作
+matplotlib.use('Agg') # 非常重要！讓 Matplotlib 在沒有 GUI 的伺服器環境下也能運作
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm # <--- 新增：用於管理字型
 from statsmodels.tsa.api import VAR
-import joblib
 import warnings
 from flask import Flask, render_template, request
 import io
@@ -14,14 +16,10 @@ from functools import lru_cache
 # --- 初始化 Flask App ---
 app = Flask(__name__)
 
-# --- 核心模型邏輯 (從你的 Tkinter App 移植過來) ---
+# --- 核心模型邏輯 ---
 
 # 忽略警告
 warnings.filterwarnings("ignore", category=FutureWarning)
-
-# 處理 Matplotlib 中文顯示問題
-plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei', 'Arial Unicode MS', 'sans-serif'] 
-plt.rcParams['axes.unicode_minus'] = False
 
 def convert_minguo_to_date(minguo_q):
     """將民國年季轉換為西元日期"""
@@ -50,9 +48,8 @@ def get_model_data():
     
     # 建立與訓練 VAR 模型
     model = VAR(df_diff)
-    # 為了部署穩定，我們直接指定一個延遲期數，而不是每次都搜索
-    # 從你的原始程式碼中，我們知道 best_order.aic 通常會選一個值，這裡我們假設是 4
-    # 如果不確定，可以執行一次 model.select_order(maxlags=10) 看看結果
+    # 為了部署穩定，我們直接指定一個延遲期數。
+    # 從 Tkinter 程式的分析結果來看，4 是一個合理的選擇。
     p = 4 
     results = model.fit(p)
     
@@ -92,14 +89,32 @@ def make_prediction(steps):
     return df_results
 
 def create_plot(df_model, df_results):
-    """生成包含歷史數據和預測結果的圖表"""
+    """生成包含歷史數據和預測結果的圖表（已修正中文亂碼問題）"""
+    
+    # --- 解決中文亂碼的關鍵部分 ---
+    # 指定我們專案中 `fonts` 資料夾下的字型檔路徑
+    font_path = './fonts/NotoSansTC-Regular.otf'
+    
+    # 載入字型檔
+    try:
+        my_font = fm.FontProperties(fname=font_path)
+    except FileNotFoundError:
+        print(f"警告：字型檔未找到於 {font_path}。圖表標題可能顯示亂碼。")
+        my_font = fm.FontProperties() # 如果找不到，使用預設字型以防程式崩潰
+    # --- 結束 ---
+
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(df_model.index, df_model['PIR'], label='歷史 PIR')
     ax.plot(df_results.index, df_results['PIR_forecast'], label='預測 PIR', color='red', linestyle='--')
-    ax.set_title("PIR 歷史數據與預測結果")
-    ax.set_xlabel("年份")
-    ax.set_ylabel("PIR 指數")
-    ax.legend()
+    
+    # 在所有需要顯示中文的地方，加上 fontproperties=my_font 參數
+    ax.set_title("PIR 歷史數據與預測結果", fontproperties=my_font, fontsize=16)
+    ax.set_xlabel("年份", fontproperties=my_font, fontsize=12)
+    ax.set_ylabel("PIR 指數", fontproperties=my_font, fontsize=12)
+    
+    # 設定圖例的字型
+    ax.legend(prop=my_font)
+    
     ax.grid(True)
     fig.tight_layout()
     
@@ -163,4 +178,4 @@ def index():
 # --- 讓 Gunicorn 可以運行 ---
 if __name__ == '__main__':
     # 這行僅用於在本機開發測試，Render 會直接使用 gunicorn
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
