@@ -5,4 +5,5 @@ numpy
 statsmodels
 scikit-learn
 joblib
+matplotlib
 gunicorn  # Gunicorn 是一個正式環境用的伺服器，比 Flask 內建的更穩定
